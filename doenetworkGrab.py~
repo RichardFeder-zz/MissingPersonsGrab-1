@@ -1,0 +1,16 @@
+ def doeGrab(url):
+     r = requests.get(url)
+     html = lxml.html.fromstring(r.text)
+     thing = html.xpath('//table//img[@height="150"]')
+     for elem in thing:
+             elem.values()
+ 
+ doeGrab('http://doenetwork.org/cases/disappear.html')
+
+
+ def iterGrab(url):
+     base_url = 'http://doenetwork.org/cases/disappear.html'
+     for i in xrange (237):
+             iter_url = base_url.replace("disappear","disappear" + str(i))
+             doeGrab(iter_url)
+ iterGrab('http://doenetwork.org/cases/disappear.html')

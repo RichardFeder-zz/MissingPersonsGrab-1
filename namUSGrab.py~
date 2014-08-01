@@ -1,0 +1,5 @@
+#This web scraper pulls information from findthemissing.org
+#We will be pulling the following: the link to the case number
+
+
+https://www.findthemissing.org/en/cases/search/thumbnail?direction=asc&order=cases.DateLKA&page=1
