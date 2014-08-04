@@ -29,7 +29,7 @@ def doeGrab(url):
 def iterGrab():
     base_url = 'http://doenetwork.org/cases/disappear.html'
     r = requests.get(base_url)
-    i = 1
+    i = 2
     all_cases = []
     print r.status_code, "status code"
     while r.status_code == 200:
