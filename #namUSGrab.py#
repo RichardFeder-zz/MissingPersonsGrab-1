@@ -55,11 +55,11 @@ def NamusGrab2(url):
     import lxml.html
     r = requests.get(url)
     html = lxml.html.fromstring(r.text)
-    processed = html.xpath('//thumb')
+    processed = html.xpath('//img')
     images = []
     for elem in processed:
-        elem.processed()
-    images.append(elem.processed())
+        if not 
+        images.append(elem.values())
     return images
         
     
