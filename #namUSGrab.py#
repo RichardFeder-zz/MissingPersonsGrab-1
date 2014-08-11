@@ -33,5 +33,27 @@ def pageGrabDoe(url):
     r = requests.get(url)
     html = lxml.html.fromstring(r.text)
     to_parse = 
+    
+    
+    
+    
+    
+    
+def SeleniumNamusGrab():
+    from selenium import webdriver
+    webdriver.Firefox()
+    url = 'https://www.findthemissing.org/en/searches'
+    browser.get(url)
+    url = 'https://www.findthemissing.org/en/cases/search'
+    browser.get(url)
+    url = 'https://www.findthemissing.org/en/cases/search/thumbnail'
+    browser.get(url)
+    
+    
+    
+    
+    
+    
+    
 
 
