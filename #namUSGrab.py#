@@ -50,13 +50,18 @@ def SeleniumNamusGrab():
     browser.get(url)
     
     
-def NamusGrab2():
+def NamusGrab2(url):
     import requests
     import lxml.html
     r = requests.get(url)
     html = lxml.html.fromstring(r.text)
-    processed = html.xpath('
+    processed = html.xpath('//thumb')
     images = []
+    for elem in processed:
+        elem.processed()
+    images.append(elem.processed())
+    return images
+        
     
     
     
