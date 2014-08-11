@@ -55,6 +55,7 @@ def NamusGrab2():
     import lxml.html
     r = requests.get(url)
     html = lxml.html.fromstring(r.text)
+    processed = html.xpath('
     images = []
     
     
