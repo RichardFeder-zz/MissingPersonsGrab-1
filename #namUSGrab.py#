@@ -50,6 +50,14 @@ def SeleniumNamusGrab():
     browser.get(url)
     
     
+def NamusGrab2():
+    import requests
+    import lxml.html
+    r = requests.get(url)
+    html = lxml.html.fromstring(r.text)
+    images = []
+    
+    
     
     
     
