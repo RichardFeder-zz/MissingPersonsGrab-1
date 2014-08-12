@@ -29,7 +29,7 @@ def doeGrab(url):
 def iterGrab():
     base_url = 'http://doenetwork.org/cases/disappear.html'
     r = requests.get(base_url)
-    i = 1
+    i = 2
     all_cases = []
     print r.status_code, "status code"
     while r.status_code == 200:
@@ -87,7 +87,19 @@ def NamphGrab(url):
         case_data.append(case_images)
     return case_data
     
-# NamphGrab("http://www.nampn.org/cases")
-    
-                                                
+# use NamphGrab("http://www.nampn.org/cases") to get all cases, use iterGrabNamph() for all cases 1996 to present.
+def iterGrabNamph():
+    months = ['Jan-Mar', 'Apr-Jun', 'Jul-Sep', 'Oct-Dec']
+    for period in months:
+        base_url_namph = 'http://www.nampn.org/mp' + str((months[period])
+        i = 1996
+        r = requests.get(base_url_namph)
+        all_cases = []
+        while r.status_code == 200:
+            iter_url_namph = base_url_namph.replace("mp","mp" + str(i))
+            r = requests.get(iter_url_namph)
+            cases = doeGrab(iter_url_namph)
+            all_cases.append(cases)
+            i += 1
+    return all_cases                                           
 
