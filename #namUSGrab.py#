@@ -75,12 +75,10 @@ def NamusGrab2(url):
 def iterGrabNamus():
     base_url_namus = 'https://www.findthemissing.org/en/cases/'
     namus_urls = []
-    for i in xrange(10):
+    for i in xrange(25,32):
         iter_url_namus =  base_url_namus.replace("cases/","cases/"+ str(i))
-        print iter_url_namus 
         r = requests.get(iter_url_namus)
         html = lxml.html.fromstring(r.text)
-        print r.status_code
         if r.status_code == 200:
             namus_urls.append(iter_url_namus)
     case_data = []
@@ -93,6 +91,10 @@ def iterGrabNamus():
         case_file_urls.insert(0,case)
         case_data.append(case_file_urls)
         print case_data
+    lengths = [len(x) for x in case_data]
+    print lengths
+    for j in xrange(lengths):
+        print int(lengths[j])
     return case_data
     
     
